@@ -51,11 +51,19 @@ return string.toLowerCase();
 /**
  * Given an input String, return a new String forced to uppercase.
  */
+
+/*
+I:Function takes in a string
+O: Return a new string forced to uppercase
+C: Has to be uppercase
+E: N/A
+*/
+
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
 
-
-
+return string.toUpperCase();
+// returns the string uppercase
     // YOUR CODE ABOVE HERE //
 }
 
@@ -72,10 +80,21 @@ function toUpperCase(string) {
  *
  *      See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Using_global_and_ignore_with_replace()
  */
+
+/* 
+I: Function takes in a string
+O: The string is converted to dasecase
+C: Has to have a dash in between string
+E: What if the have spaces in between string
+*/
+
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-
-
+    var re = / /gi;
+    var newStr = string.replace(re, '-');
+    // declare and assigned new string to replace spaces and seperate by dash
+        return newStr.toLowerCase();
+        // return the new string to lowercase
 
     // YOUR CODE ABOVE HERE //
 }
@@ -92,9 +111,19 @@ function toDashCase(string) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
+
+/*
+I: Function takes a string and a single character
+O: Return true if the beginning character match, false otherwise
+C: The function is case sensitive
+E:N/A
+*/
+
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
 
+    return string[0].toUpperCase() === char.toUpperCase();
+     // comparing if the beginning of string matches with char
     
 
     // YOUR CODE ABOVE HERE //
@@ -112,10 +141,18 @@ function beginsWith(string, char) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
+
+/*
+I: Function takes a string and single character
+O: Return true if the end of the string match with the character, false otherwise
+C: N/A
+E: How can you ensure uppercase and lowercase can be compared equally?
+*/
+
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-
+return string[string.length -1].toLowerCase() === char.toLowerCase();
+// comparing if the end of string matches with char
 
     // YOUR CODE ABOVE HERE //
 }
@@ -125,10 +162,19 @@ function endsWith(string, char) {
  *
  * TIP: What's the operator to concatenate two Strings?
  */
+
+/*
+I: Function takes two strings
+O: Return the strings concatenated into one
+C: N/A
+E: N/A
+*/
+
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+return stringOne + stringTwo;
+// concatenated two strings together
 
     // YOUR CODE ABOVE HERE //
 }
