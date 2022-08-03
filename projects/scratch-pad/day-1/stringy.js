@@ -200,7 +200,7 @@ E: N/A
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-return stringOne.join(stringTwo);
+return args.join("");
 
     // YOUR CODE ABOVE HERE //
 }
@@ -227,6 +227,8 @@ function longest(stringOne, stringTwo) {
 
     if (stringOne.length > stringTwo.length) {
         return stringOne;
+    } else {(stringOne.length < stringTwo.length) 
+        return stringTwo;
     }
 
 
@@ -240,8 +242,28 @@ function longest(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
+
+/*
+I: Function takes in two strings
+O: return 1 if the first is higher in alphabetical order than
+ the second, return -1 if the second is higher in alphabetical order than the
+ first, and return 0 if they're equal.
+C: N/A
+E: N/A
+*/
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+if (stringOne > stringTwo) {
+    return 1;
+} else if (stringOne < stringTwo) {
+    return - 1;
+} else { 
+    if (stringOne === stringTwo) {
+    return 0;
+}
+    if (stringOne === stringTwo) {
+        return 0;
+    }
 
 
 
