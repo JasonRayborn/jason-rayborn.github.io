@@ -10,10 +10,20 @@
  * Given an input Array, loop forward over the Array and print its values 
  * using console.log().
  */
+
+/*
+I: Function takes an array 
+O: Loop through array and print its values
+C: N/A
+E: N/A
+*/
+
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
   
-  
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -23,10 +33,20 @@ function printArrayValues(array) {
  * Given an input Array, loop backwards over the Array and print its values 
  * using console.log().
  */
+
+/*
+I: Function takes an array
+O: Loop backwards over array and print its values
+C: Has to be looped backwards
+E: N/A
+*/
+
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
   
-  
+  for (let i = array.length - 1 ; i >= 0; i--) {
+    console.log(array[i]);
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -35,10 +55,18 @@ function printArrayValuesInReverse(array) {
 /** 
  * Given an input Object, return an Array containing the Object keys.
  */
+
+/*
+I: Function input object
+O: Return an array cotaining the object keys
+C: N/A
+E: N/A
+*/
+
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  return (Object.keys(object));
   
   
   // YOUR CODE ABOVE HERE //
@@ -48,9 +76,20 @@ function getObjectKeys(object) {
  * Given an input Object, loop over the Object and print its keys 
  * using console.log().
  */
+
+/*
+I: Function inputs an object
+O: Loop over object and print its keys using console.log()
+C: N/A
+E: N/A
+*/
+
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
+  for (var key in object) {
+    console.log(key);
+  }
   
   
   
@@ -60,9 +99,22 @@ function printObjectKeys(object) {
 /** 
  * Given an input Object, return an Array containing the Object's values.
  */
+
+/*
+I: Function inputs an object
+O: Return an array containing the object's values
+C: N/A
+E: N/A
+*/
+
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
+  let values = [];
+  for (let key in object){
+      values.push(object[key]);
+  }
+  return values;
   
   
   
