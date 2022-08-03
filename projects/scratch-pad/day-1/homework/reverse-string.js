@@ -18,12 +18,23 @@
  *  c. how do you access individual characters of a String?
  *  d. how do you concatenate Strings? What operator do we use?
  */
+/*
+I: Function that takes a string
+O: Returns a new string in reverse
+C: Has to be in reverse (the string)
+E: N/A
+*/
+
+
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
+    var newStr = ""; // declare a variable to an empty string
+    for (let i = input.length - 1; i < i >= 0; i-- ) { // looped through string in reverse
+        newStr += input[i]; // concatenate the new string and reassigned to variable
+    }
     
-    
-    
+    return newStr;
     
     // YOUR CODE GOES ABOVE HERE //
 }

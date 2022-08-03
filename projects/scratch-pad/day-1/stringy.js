@@ -189,10 +189,18 @@ return stringOne + stringTwo;
  * TIP: This Function pulls out all the arguments passed to it and stores them
  *      in an Array called args.
  */
+
+/*
+I: Function takes in any number of strings 
+O: Return all strings joined together
+C: N/A
+E: N/A
+*/
+
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+return stringOne.join(stringTwo);
 
     // YOUR CODE ABOVE HERE //
 }
@@ -206,9 +214,20 @@ function join(stringOne, stringTwo) {
  *
  * TIP: What property of the String do we need to compare?
  */
+
+/*
+I: Function takes in two strings
+O: Returns the longest of the two strings
+C: N/A
+E: N/A
+*/
+
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
+    if (stringOne.length > stringTwo.length) {
+        return stringOne;
+    }
 
 
     // YOUR CODE ABOVE HERE //
