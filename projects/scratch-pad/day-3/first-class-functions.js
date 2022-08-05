@@ -74,13 +74,21 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    return string => {
-        if (endsWith.toLowerCase() === string[string.length-1].toLowerCase()){
-        return true; 
-        }else {
+    // return string => {
+    //     if (endsWith.toLowerCase() === string[string.length-1].toLowerCase()){
+    //     return true; 
+    //     }else {
+    //         return false;
+    //     }
+       
+    // }
+
+    return function(string) {
+        if (endsWith.toLowerCase() === string[string.length - 1].toLowerCase()) {
+            return true;
+        } else {
             return false;
         }
-       
     }
     
     
