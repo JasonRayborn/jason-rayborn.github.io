@@ -71,25 +71,21 @@ function createStartsWithFilter(startsWith) {
  * Function that tests whether a given String ends with the endsWith 
  * character.
  */
+
+ 
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    // return string => {
-    //     if (endsWith.toLowerCase() === string[string.length-1].toLowerCase()){
-    //     return true; 
-    //     }else {
-    //         return false;
-    //     }
-       
-    // }
-
-    return function(string) {
-        if (endsWith.toLowerCase() === string[string.length - 1].toLowerCase()) {
-            return true;
-        } else {
+    return string => {
+        if (endsWith.toLowerCase() === string[string.length-1].toLowerCase()){
+        return true; 
+        }else {
             return false;
         }
+       
     }
+
+   
     
     
     // YOUR CODE ABOVE HERE //
@@ -102,9 +98,22 @@ function createEndsWithFilter(endsWith) {
  * TIP: You need to loop over the Strings, right? We need to pass each String to 
  * the modify Function, but we need to collect the results into some collection.
  */
+
+/**
+ I: Input is an arrray of strings and a function
+ O: Return the array of strings modified
+ C: N/A
+ E: N/A
+ */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
+    let newArr = [];
+    for (let i = 0; i < strings.length; i++) {
+        newArr.push(modify(strings[i]));
+    }
+    return newArr;
+
     
     
     
@@ -123,6 +132,13 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
+    for (let i = 0; i < strings.length; i++){
+        if(test(strings[i])=== false){
+     
+     return false;
+        }
+    }
+     return true;
     
     
     

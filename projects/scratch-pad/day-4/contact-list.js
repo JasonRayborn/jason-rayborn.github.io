@@ -35,8 +35,16 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+    // return a contact object 
+ var obj = {
+    id: id,
+    nameFirst: nameFirst,
+    nameLast: nameLast,
+  };
+  // Return it
+  return obj;
+}
 
-} 
 
 
 function makeContactList() {
@@ -49,9 +57,52 @@ function makeContactList() {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        },
+        addContact: function(obj){
+            contacts.push(obj);
+        },
+        findContact: function(fullName){
+            //loop to access a certain index in array
+            //compare nameFirst and nameLast to fullName
+            //if it matches, return the contact object
+            //else return
+            
+            for (var i = 0; i < contacts.length; i++){
+              if (fullName === contacts[i].nameFirst + " " + contacts[i].nameLast){
+                  return contacts[i];
+                  }
+                }
+                return undefined;
+            },
+            removeContact: function(contact) {
+                // remove object from contact list
+                // loop to access a certain index in the array and remove each object
+                    for(let i = 0; i < contacts.length; i++) {
+                       if(contacts[i] === contact) {
+                    return contacts.splice(i, 1);
+                }                 
+             }
+         },
+         printAllContactNames: function(){
+            var retval = "";
+    console.log(contacts);
+    for (var i = 0; i < contacts.length; i++){
+        var fullName = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
+        if (i === contacts.length - 1 ){
+            retval += fullName;
+            
+        }else {
+            retval += fullName + '\n';
         }
-    }
+    }   
+    
+  return retval 
 }
+};    
+}
+    
+
+ 
 
 
 
