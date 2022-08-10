@@ -28,7 +28,7 @@
 var animal = {};
 
 // using dot notation, give animal a property name "species" with a value of the animal species
- animal.species = "Bat";
+ animal.species = "Wolf";
 
 // Using **bracket notation** give `animal` a **property** called `name` with a value of your animal`s name.
 animal["name"] = "Morbius";
@@ -55,25 +55,27 @@ console.log(animal);
 //  11. [ ] Does it look right?
 
 //Create a variable named `noises` and assign it to an empty array.
-var noises = [];
+  var noises = [];
 
 // Using **bracket notation** give `noises` it's first element. A string representing a sound your animal might make.
-noises["Clicks"];
+noises[0] = "Howl";
 
 //Using an array function add another noise to the end of `noises`.
-noises.push("Ping");
+noises.push("Pant");
 
 // Adding an element at the beginning of the array
-noises.unshift("Fluttering");
+noises.unshift("Cry");
 
 //Using **bracket syntax** again, add another element to the end of `noises`. Make sure that the way you do this step would work no matter how many elements `noises` had. In other words, don't hard code the position of the new element.
-noises[3] = "Chriping";
+noises[3] = "Sniff";
 
 //`console.log` the length of `noises`
 console.log(noises.length);
 
 //`console.log` the last element in `noises` again without hard coding the index.
-console.log(noises.length - 1);
+console.log(noises.length);
+
+
 
 //`console.log` the whole array.
 console.log(noises);
@@ -86,11 +88,13 @@ console.log(noises);
 //  3. [ ] `console.log` `animal`.
 
 // assign the `noises` property on `animal` to our new `noises` array
- animal[noises] = noises;
+ animal.noises = noises;
 
 //  Using any syntax add another noise to the `noises` property on `animal`.
-animal.noises = "Screech";
+noises[4] = "Growl";
 
+// `console.log` the length of `noises`
+console.log(animal);
 
 /* *******************************************************************
  * Step 4 - Review
@@ -114,14 +118,75 @@ animal.noises = "Screech";
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+// Create a variable named animals and assign it to an empty array.
+var animals = [];
 
+//push our animal that we created to animals. You should now see your first animal appear on your index.html page!
+animals.push(animal);
+
+//console.log animals. What does it look like?
+console.log(animals);
+
+//Create a variable called duck and assign it to the data:
+var duck ={ 
+  species: 'duck', 
+  name: 'Jerome', 
+  noises: ['quack', 'honk', 'sneeze', 'woosh'] }
+
+  // push duck to animals
+  animals.push(duck);
+
+  //console.log animals. 
+  console.log(animals);
+
+  //Create two more animal objects each with a species, a name, and at least two sounds sounds and add each one of them to `animals.
+var parrot = {
+  species: "bird",
+  name: "Mal",
+  noises: ["talk", "chrip"]
+}
+
+var dolphin = {
+  species: "mammal",
+  name: "Ecco",
+  noises: ["click", "spit"]
+}
+
+animals.push(parrot);
+animals.push(dolphin);
+
+//`console.log` `animals`, and, `console.log` the length of `animals`. Is everything looking right?
+console.log(animals);
+console.log(animals.length);
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+var friends = [];
+// An array can hold a list of data
+function getRandom (animals){
+    for (var i = 0; i < animals.length; i++){
+    return Math.floor(Math.random(animals.length));
+    
+}
+}
 
+friends.push(parrot["name"]);
+animals[getRandom(animals)].friends = friends;
+console.log(friends);
+
+
+   
+  
+
+
+//Using a random index from this function that you just created, get a random animal and add its `name` to `friends`
+friends.push(wolf["name"]);
+animals[getRandom(animals)].friends = friends;
+console.log(friends);
+console.log(animals);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
