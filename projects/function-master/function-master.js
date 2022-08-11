@@ -2,15 +2,20 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function objectValues(object) {
+const { isArray } = require("lodash");
 
-} 
+function objectValues(object) {
+return Object.values(object);
+}
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+//Should take an object and return all its keys in a string each separated with a space
+return Object.keys(object).join(" ");
 
 }
 
@@ -19,7 +24,14 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    //Should take an object and return all its string values in a string each separated with a space"
+    var values = [];
+    for (var key in object) {
+        if (typeof object[key] === "string") {// checks to see if object is equal to a string
+            values.push(object[key]);
+        }
+    }
+    return values.join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -27,7 +39,13 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    //Should take one argument and return 'array' if its an array and 'object' if its an object
+//    if (Array.isArray(collection)) {
+//     return "array";
+//    } else {
+//     return "object";
+//    }
+return Array.isArray(collection) ? "array" : "object";
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -35,7 +53,9 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+    //Should take a string of one word, and return the word with its first letter capitalized
+    var newStr = string[0].toUpperCase() + string.substring(1);
+    return newStr;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -43,7 +63,13 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    //Should take a string of words and return a string with all the words capitalized
+    var newString = string.split(" "); //split string 
+    var arr = []; //assign a varibale to an empty array
+    for (var i = 0; i < newString.length; i++) { //loop through the new string and push into the array
+        arr.push(newString[i][0].toUpperCase() + newString[i].substring(1)); //combine rest of the string from index 1
+    }
+    return arr.join(" "); //join and return with spaces
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -51,7 +77,9 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+//Should take an object with a name property and return 'Welcome <Name>!
+var string = "Welcome " + capitalizeWord(object.name) + "!";
+return string;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -59,7 +87,9 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+    //Should take an object with a name an a species and return '<Name> is a <Species>'"
+var string = capitalizeWord(object.name) + " is a " + capitalizeWord(object.species);
+return string;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -67,7 +97,9 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+//Should take an object, if this object has a noises array return 
+//them as a string separated by a space, if there are no noises return 'there are no noises
+return arrayOrObject(object.noises) === "array" && object.noises.length > 1 ? object.noises.join(" ") : "there are no noises";
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -75,7 +107,7 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-
+// Should take a string of words and a word and return true if <word> is in <string of words>, otherwise return false.
 }
 
 //////////////////////////////////////////////////////////////////////
