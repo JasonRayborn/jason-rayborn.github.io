@@ -2,7 +2,7 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-const { isArray } = require("lodash");
+const { isArray, result } = require("lodash");
 
 function objectValues(object) {
 return Object.values(object);
@@ -108,6 +108,7 @@ return arrayOrObject(object.noises) === "array" && object.noises.length > 1 ? ob
 
 function hasWord(string, word) {
 // Should take a string of words and a word and return true if <word> is in <string of words>, otherwise return false.
+return string.includes(word) ? true : false;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -115,6 +116,9 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
+    //Should take a name and an object and add the name to the object's friends array then return the object
+    object.friends.push(name);
+    return object;
 
 }
 
@@ -123,6 +127,12 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
+    //Should take a name and an object and return true if <name> is a friend of <object> and false otherwise
+    if (arrayOrObject(object.friends) === "array" && object.friends.includes(name)) {
+        return true;
+    } else {
+        return false;
+    }
 
 }
 
@@ -131,7 +141,16 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+    //Should take a name and a list of people, and return a list of all the names that <name> is not friends with"
+var results = []; // declare variable to an empty array
+for (var i = 0; i < array.length; i ++) { // loop through array
+    if (name !== array[i].name) { // checking if name is in array
+        if (!array[i].friends.includes(name)) { // checking if its not an array and if it has name
+            results.push(array[i].name); // push results to new empty array
+        }
+    }
+}
+return results; // return the results
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -139,7 +158,21 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
+    //Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. 
+    //If <key> does not exist on <object> create it."
 
+
+    //returns a boolean indicating whether the object has the specified property as its own property
+    if (!object.hasOwnProperty(key)) {  
+        object[key] = value; // assigning object[key] to value
+    } else {
+        for (keys in object) { // looping through object
+            if (keys === key) { //comparing if the results are the same
+                object[keys] = value; // assigning object[keys] to value
+            }
+        }
+    }
+      return object; //return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -147,7 +180,16 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    //Should take an object and an array of strings. 
+    //Should remove any properties on <object> that are listed in <array>"
+    for (var i = 0; i < array.length; i++) { // loop through array
+        for (key in object) { // loop through object
+            if (array[i] === key) { // if array is equal to object
+                delete object[key]; // delete the key
+            }
+        }
+    }
+     return object; // return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -155,6 +197,8 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
+    //Should take an array and return an array with all the duplicates removed"
+    return [...new Set(array)]; // ...new Set() Use to remove duplicate elements from the array
 
 }
 
