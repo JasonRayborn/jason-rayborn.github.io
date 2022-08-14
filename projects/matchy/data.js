@@ -183,7 +183,7 @@ console.log(friends);
 
 
 //Using a random index from this function that you just created, get a random animal and add its `name` to `friends`
-friends.push(wolf["name"]);
+friends.push(duck["name"]);
 animals[getRandom(animals)].friends = friends;
 console.log(friends);
 console.log(animals);

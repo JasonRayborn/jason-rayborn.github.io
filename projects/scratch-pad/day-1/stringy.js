@@ -253,10 +253,18 @@ E: N/A
 */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    // if (stringOne > stringTwo){
+    //     return -1;
+    // }else if (stringTwo > stringOne){
+    //      return 1;
+    //  }else {
+    //      return 0;
+    //  }
+
     if (stringOne > stringTwo){
-        return -1;
+        return 1;
     }else if (stringTwo > stringOne){
-         return 1;
+         return -1;
      }else {
          return 0;
      }
@@ -286,18 +294,27 @@ E: N/A
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-    if (stringOne > stringTwo){
-        return 1;
+    // if (stringOne > stringTwo){
+    //     return 1;
+    // }else if (stringTwo > stringOne){
+    //      return -1;
+    //  }else {
+    //      return 0;
+    //  }
+
+
+
+     if (stringOne > stringTwo){
+        return -1;
     }else if (stringTwo > stringOne){
-         return -1;
+         return 1;
      }else {
          return 0;
      }
-
-
     // YOUR CODE ABOVE HERE //
 }
 
+ 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
