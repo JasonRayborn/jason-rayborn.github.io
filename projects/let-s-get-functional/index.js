@@ -73,7 +73,19 @@ var youngestCustomer = function(array) {
     return obj.name;
 }
     
-var averageBalance;
+var averageBalance = function(array) {
+ // Assign reduce to balance variable
+ let balance = _.reduce(array, function(acc, curr) {
+    // Used parseFloat to convert number string to number and replace
+    // special chars 
+     let custbal = parseFloat(curr.balance.replace("$", "").replace(",", ""));
+     //assign custbal to alter curr 
+     return acc + custbal;
+     
+ }, 0)
+ let avg = balance / array.length;
+ return avg;
+};
 
 var firstLetterCount;
 
