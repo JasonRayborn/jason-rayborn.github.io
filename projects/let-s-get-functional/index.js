@@ -87,7 +87,14 @@ var averageBalance = function(array) {
  return avg;
 };
 
-var firstLetterCount;
+var firstLetterCount = function(array, letter) {
+    return array.reduce(function(acc, curr) {
+      if (curr.name[0].toLowerCase() === letter.toLowerCase()) {
+        acc++;
+      }
+      return acc;
+    },0)
+};
 
 var friendFirstLetterCount;
 
