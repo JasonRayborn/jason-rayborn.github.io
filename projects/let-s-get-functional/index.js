@@ -96,7 +96,18 @@ var firstLetterCount = function(array, letter) {
     },0)
 };
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(array, customer, letter) {
+    let member = array.find(function(personObj)
+{
+      return personObj.name.toLowerCase() === customer.toLowerCase();
+});
+      return member.friends.reduce(function(acc, curr) {
+        if (curr.name[0].toLowerCase() === letter.toLowerCase()) {
+            acc++;
+        }
+        return acc;
+      },0);
+    };
 
 var friendsCount;
 
