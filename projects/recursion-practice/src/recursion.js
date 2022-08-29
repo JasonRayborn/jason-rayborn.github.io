@@ -134,9 +134,13 @@ var reverse = function(string) {
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
   //base case
-  string = string.replace(/[^a-z0-9]/i, '').toLowerCase();
-  //recursion case
-  return (string.length > 0) && Array.from(string).reverse().join(' ') === string;
+  if (string.length === 0) return true;
+  if (string.length === 1 || string.length === 2) return true;
+  if (string.charAt(0).toLowerCase() !== string.charAt(string.length - 1).toLowerCase()) {
+    return false;
+  }
+  let str = string.substring(1, string.length - 1 );
+  return palindrome(str);
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -151,6 +155,19 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
+  let isNeg = false;
+  if (x < 0) {
+    isNeg = !isNeg;
+    x = -x;
+  }
+  if (y < 0) {
+    isNeg = !isNeg;
+    y = -y;
+  }
+  if (y === 0 || x === 0) return 0;
+  if (y === 1) return x;
+  let res =x + multiply(x, y - 1)
+  return isNeg ? -res : res;
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
@@ -172,6 +189,7 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
@@ -193,11 +211,19 @@ var buildList = function(value, length) {
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
 var countOccurrence = function(array, value) {
+  //base case
+  if (array.length === 0) return 0;
+  if (array[0] === value) return 1 + countOccurrence(array.slice(1, array.length), value);
+  return countOccurrence(array.slice(1, array.length), value);
 };
 
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
 var rMap = function(array, callback) {
+  if (array.length === 0) return [];
+  let list =rMap(array.slice(1, array.length), callback);
+  list.unshift(callback(array[0]));
+  return list;
 };
 
 // 21. Write a function that counts the number of times a key occurs in an object.
