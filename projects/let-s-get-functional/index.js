@@ -109,12 +109,56 @@ var friendFirstLetterCount = function(array, customer, letter) {
       },0);
     };
 
-var friendsCount;
+var friendsCount = function(array, name) {
+    let friends = [];
+    _.each(array, function(person) {
+        _.each(person.friends, function(friend) {
+            if (name === friend.name) {
+                friends.push(person.name);
+            }
+        })
+    })
+    return friends;
+};
 
-var topThreeTags;
+var topThreeTags = function(array) {
+    let objArray = [];
+    let objectCount = array.map(function(personObj) {
+        return personObj.tags;
+    }).reduce(function(acc, curr) {
+        return acc.concat(curr);
+    }).reduce(function(acc, curr) {
+        if (!acc[curr]) {
+            acc[curr] = 1
+        } else {
+            acc[curr]++;
+        }
+        return acc;
+    },{})
+    
 
-var genderCount;
+   for (let key in objectCount) {
+    let newObj = {};
+    newObj.name = key;
+    newObj.count = objectCount[key];
+    objArray.push(newObj);
+   }
+   let newArray = objArray.sort(function(a, b) {
+    return b.count - a.count;
+   }).slice(0, 3);
+   let top3Tags = newArray.map(tag => tag.name)
+   return top3Tags;
+};
 
+var genderCount = array => array.map(person => person.gender)
+.reduce((genderObj, num) => {
+    if (!genderObj[num]) {
+        genderObj[num] = 1;
+    } else {
+        genderObj[num] += 1
+    }
+    return genderObj
+},{});
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////

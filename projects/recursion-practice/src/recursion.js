@@ -189,22 +189,36 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
-
+   if (str1.length === 0 && str2.length === 0) return true;
+   if (str1[0] !== str2[0]) return false;
+   return compareStr(str1.substring(1), str2.substring(1));
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
-var createArray = function(str){
+var createArray = function(str) {
+  if (str.length === 1) return [str[0]];
+  let list = createArray(str.substring(1));
+  list.unshift(str[0]);
+  return list;
 };
 
 // 17. Reverse the order of an array
 var reverseArr = function (array) {
+  if (array.length === 1) return [array[0]];
+  let list = reverseArr(array.slice(1, array.length));
+  list.push(array[0]);
+  return list;
 };
 
 // 18. Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
 var buildList = function(value, length) {
+  if (length === 0) return [];
+  let list = buildList(value, length -1);
+  list.push(value);
+  return list;
 };
 
 // 19. Count the occurence of a value inside a list.
@@ -259,6 +273,10 @@ var fibonacci = function(n) {
 // nthFibo(7); // 13
 // nthFibo(3); // 2
 var nthFibo = function(n) {
+  if (n < 0) return null;
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+  return nthFibo(n - 1) + nthFibo(n - 2);
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
