@@ -26,9 +26,27 @@ function every() {
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function dominantDirection() {
+function dominantDirection(string) {
+  let ltr = [];
+  let rtl = [];
 
-}
+  for (let i = 0; i < string.length; i++) {
+    let scriptName = characterScript(string.charCodeAt(i));
+
+    if (scriptName !== null) {
+      if (scriptName.direction === "ltr") {
+        ltr.push(scriptName);
+      } else {
+        rtl.push(scriptName);
+      }
+    }
+  }
+
+   return ltr.length > rtl.length ? "ltr" : "rtl";
+    
+  }
+ 
+
 
 // /////////////////////////////////////////////////////////////////////////////
 //  //////////////////////////////////////////////////////
