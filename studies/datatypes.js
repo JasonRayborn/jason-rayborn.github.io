@@ -35,6 +35,14 @@ a === b; // true
 b === c; // false
 
 
+let bigNum = 10;
+let smallNum = 2; 
+
+
+bigNum > smallNum; //true
+bigNum < smallNum; //false
+
+
 /* 4. Array
 *An array is a container that holds values and is written with square brackets
 *and have an index that starts at 0. 

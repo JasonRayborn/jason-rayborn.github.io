@@ -62,3 +62,28 @@ let greeting = "say Hi";
    /*Example*/
        //const greeting = "say Hi";
     greeting = "say Hello instead";// error: Assignment to constant variable
+
+
+    /*Hoisting*/
+    /*Hoisting is a behavior in JavaScript in which variable and function 
+    declarations are moved to the top of their scope. Mainly, variables declared
+    with the keyword "var" are hoisted as well as function
+     */
+
+
+    /*Example of Hoisting*/
+
+    function galatic() {
+        function galaxy() {
+            var star;
+            console.log(star);
+        }
+
+        var moon;
+        moon = 2; 
+        moon = 5;
+    }
+    var earth;
+    earth = galatic();
+
+    // The function galactic moved to the top of the scope

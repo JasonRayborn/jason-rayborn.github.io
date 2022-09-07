@@ -22,7 +22,11 @@ while (i < 10) {
 console.log(sum); //45
 
 /*For Loop*/
-/*The for loops through a block of code a certain number of times*/
+/*The for loop cotains three statements:
+- start: initializes counting variable
+-stop: defines condition that when it's false, will exit the loop
+-update: defines how to update counting variable each iteration*/
+
 /*For Loop example*/
 for (let i = 0; i < 4; i++) {
     console.log(i); // 0, 1, 2, 3

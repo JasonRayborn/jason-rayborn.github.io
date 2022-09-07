@@ -9,14 +9,14 @@ Functions are a block code that provides specific instruction to perform a job.
 */
 
 
+/*Example*/ 
+function print(name) {; //Created a function with the  key word "function" and giving the function a name
+            // ^^^ The parameter of the function
+console.log(name);//statement to be executed when the function is called 
+}
 
-/*The two phases to using functions: First we must ___? Next we can execute
-(or two other words for executing a function?) a function by?
-*First we must create a new function and then call the function.
-*/
-
-
-
+print("Jase"); //Invoking (or calling) the function passing in a string in the argument
+//prints "Jase" 
 
 /*What’s the difference between a function’s parameters and arguments PASSED 
 to a function?
@@ -25,10 +25,13 @@ when creating a new function. Their value is unknown until we call the function.
 *Arguments go inside the parenthesis when the function is called. These 
 arguments can be the values from the variables that were declared or
 they be literal data.
-
 */
+function add(num1, num2)  {//<<< Function parameters are the names listed in the function's definition
+  return num1 + num2;
+}
 
-
+add(5, 10); //Function arguments are the real values passed to the function
+//15
 
 /*What’s the syntax for a NAMED function?*/
 function addNum(a,b){
@@ -64,6 +67,27 @@ The inverse is NOT true.
 *and is therefore accessible from anywhere in your code. 
 *Each function has its own scope, and any variable declared within that 
 *function is only accessible from that function and any nested functions. *
+*/
+
+/* Example*/
+var fullMoon = true;
+
+//Initialize a gobal variable
+let species = 'human';
+
+if (fullMoon) {
+  //Initialize a block-scoped variable
+  let species = 'werewolf';
+  console.log(`Its a full moon. Jase is currently a ${species}.`);
+}
+console.log(`It is not a full moon. Jase is currently a ${species}.`)
+
+//output
+/*It is a full moon. Jase is currently a werewolf.
+It is not a full moon. Jase is currently a human.
+
+The species variable has one value globally (human), and another 
+value locally (werewolf). 
 */
 
 

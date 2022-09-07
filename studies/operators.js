@@ -7,13 +7,40 @@ single or multiple operands (data value) and produces a result*/
 /*Assignment Operator*/
 /*An assignment operator assigns a value to its left operand
 based on the value of its right operand
-=.. Assign value
-+=.. Add then assign
--=.. Subtract then assign
-*=.. Multiply then assign
+
+
 /*Example*/
+//Assignment operator
 let x = 1; //assigns the value of 1 to x
 console.log(x); // logs 1 to the console
+
+
+//Addition assignment
+a += 5; 
+console.log(a); //a = a + 5
+
+
+//Subtraction assignment
+a -= 2; 
+console.log(a); //a = a - 2
+
+
+//Multiplication assignment
+a *= 3;
+console.log(a); //a = a * 3
+
+
+//Division assignment 
+a /= 2;
+console.log(a); //a = a / 2
+
+
+//Remainder assignment
+a %= 2;
+console.log(a); //a = a % 2
+
+
+
 
 
 /*Comparsion Operator*/
